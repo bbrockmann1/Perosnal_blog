@@ -18,7 +18,6 @@ To set up this project locally, follow these steps:
 3. run the development server:
    ```bash
    npm start
-
 ## Contributing
 
 If you're interested in contributing to this project by adding articles, fixing bugs, or improving the website, feel free to submit a pull request. Your contributions are welcomed!
