@@ -1,4 +1,5 @@
-import logo from './logo.gif';
+import logo from '../media/logo.gif';
+import './App.js';
 import './App.css';
 import ChromeDinoGame from 'react-chrome-dino';
 
@@ -11,7 +12,7 @@ function App() {
           Hello, world!
         </p>
         <div className="game-container">
-          {/* Game renders twice in development due to to React Strict Mode. Will not render twice is production. */}
+          {/* Game renders twice in development due to to React Strict Mode. Will not render twice is production */}
           <ChromeDinoGame />
         </div>         
         <p>
