@@ -17,7 +17,7 @@ body {
 }
 
 .site-title {
-    max-width: 350px;
+    max-width: 300px;
     height: auto;
 }
 
@@ -38,14 +38,14 @@ body {
     padding: .25rem;
 }
 
+.nav a:hover {
+    background-color: #777;
+}
+
 .nav li.active {
     background-color: #8d8a8a;
 }
 
 .nav li:hover {
-    background-color: #777;
-}
-
-.nav a:hover {
     background-color: #777;
 }
