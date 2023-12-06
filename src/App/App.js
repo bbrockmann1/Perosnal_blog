@@ -1,25 +1,20 @@
-import logo from '../media/logo.gif';
-import './App.js';
-import './App.css';
-import ChromeDinoGame from 'react-chrome-dino';
+import Homepage from "../homepage/Homepage";
+import Navbar from "../Navbar/Navbar";
+import About from "../About/About";
+import { Route, Routes } from 'react-router-dom';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} alt={logo}/>
-        <p>
-          Hello, world!
-        </p>
-        <div className="game-container">
-          {/* Game renders twice in development due to to React Strict Mode. Will not render twice is production */}
-          <ChromeDinoGame />
-        </div>         
-        <p>
-          This website is currently under construction.
-        </p>
-      </header>
-    </div>
+    <>
+      <Navbar />
+      <div className="container">
+        <Routes>
+          <Route path="/" element={ <Homepage /> } />
+          <Route path="/about" element={ <About /> } />
+        </Routes>
+      </div>
+    </>
   );
 }
 
