@@ -1,8 +1,11 @@
 import { Link, useMatch, useResolvedPath } from 'react-router-dom'
+import { useState } from 'react';
 import './navbar.css';
 import logo from '../media/navbarlogo.png';
 
 function Navbar() {
+  const [showLinks, setShowLinks] = useState(false);
+
     return (       
       <nav className='nav'>
         <Link to="/">
@@ -10,9 +13,7 @@ function Navbar() {
         </Link>  
         <ul>
           <CustomLink to='/about'>About</CustomLink>
-          <li>
-            <h1>Links</h1>
-          </li>
+          <a>Links</a>
         </ul>
       </nav>
     );

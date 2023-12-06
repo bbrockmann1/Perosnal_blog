@@ -38,17 +38,14 @@ body {
     padding: .25rem;
 }
 
-.nav h1 {
-    color: inherit;
-    height: 100%;
-    display: flex;
-    padding: .25rem;
-}
-
 .nav li.active {
     background-color: #8d8a8a;
 }
 
 .nav li:hover {
+    background-color: #777;
+}
+
+.nav a:hover {
     background-color: #777;
 }
