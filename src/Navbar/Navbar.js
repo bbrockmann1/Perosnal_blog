@@ -4,16 +4,14 @@ import './navbar.css';
 import logo from '../media/navbarlogo.png';
 
 function Navbar() {
-  const [showLinks, setShowLinks] = useState(false);
-
     return (       
       <nav className='nav'>
         <Link to="/">
           <img src={logo} alt={'Robert Brockmann'} className='site-title'></img>
         </Link>  
         <ul>
-          <CustomLink to='/about'>About</CustomLink>
-          <a>Links</a>
+          <CustomLink to='/about' className='ul1'>About</CustomLink>
+          <span className='ul2'>Links</span>
         </ul>
       </nav>
     );
