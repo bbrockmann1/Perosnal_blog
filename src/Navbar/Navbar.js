@@ -30,7 +30,7 @@ function Navbar() {
                 <a href="https://www.linkedin.com/in/robert-brockmann" target="_blank" rel="noopener noreferrer">LinkedIn</a>
               </li>
               <li className='menu-item'>
-                <a href="https://medium.com/@bbrockmann1" target="_blank" rel="noopener noreferrer">Medium</a>
+                <a href="mailto:bbrockmann1@gmail.com" >bbrockmann1@gmail.com</a>
               </li>
             </ul>
           ) : null}
