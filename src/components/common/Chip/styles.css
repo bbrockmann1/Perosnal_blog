@@ -1,6 +1,8 @@
 .chip {
   font-size: 0.7rem;
+  /* color for category chip */
   background: linear-gradient(to right, #6190e8, #a7bfe8);
+  /* color for text of category chip */
   color: #fff;
   padding: 0.3rem 0.5rem;
   border-radius: 5px;

@@ -1,7 +1,13 @@
 .blogItem-wrap {
   display: flex;
   flex-direction: column;
+  transition: transform 0.3s ease-in-out;
 }
+
+.blogItem-wrap:hover {
+  transform: scale(1.1);
+}
+
 .blogItem-cover {
   width: 100%;
   height: 250px;
@@ -20,6 +26,7 @@
   overflow: hidden;
   padding-right: 0.6rem;
   font-size: 0.8rem;
+  /* color for blog item preview text*/
   color: #a9a9a9;
 }
 
@@ -39,7 +46,8 @@
 
 .blogItem-link {
   text-decoration: none;
-  color: inherit;
+  /* color for link arrow */
+  color: #a9a9a9;
 }
 
 .blogItem-author {
@@ -57,6 +65,17 @@
 
 .blogItem-author p {
   font-size: 0.6rem;
+  /* color for date */
   color: #a9a9a9;
   font-weight: 600;
+}
+
+.title {
+  /* color of  blog item title*/
+  color: #ffffff;
+}
+
+.name {
+  /* color for name for author profile */
+  color: #a9a9a9;
 }
