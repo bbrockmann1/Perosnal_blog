@@ -16,6 +16,7 @@ function BlogItem({
   }
  }) {
   return (
+  <Link className='blogItem-link' to={`/blog/${id}`}>
     <div className='blogItem-wrap'>
       <img className='blogItem-cover' src={cover} alt='cover' />
       <Chip label={category} />
@@ -28,12 +29,11 @@ function BlogItem({
             <h6 className='name'>{authorName}</h6>
             <p>{createdAt}</p>
           </div>
-        </div>
-        <Link className='blogItem-link' to={`/blog/${id}`}>
+        </div>        
           ➝
-        </Link>
       </footer>
     </div>
+  </Link>
   );
 };
 
