@@ -1,8 +1,8 @@
 import React from 'react';
-import BlogItem from './BlogItem';
+import BlogItem from './BlogItem/BlogItem';
 import './styles.css';
 
-const BlogList = ({ blogs }) => {
+function BlogList({ blogs }) {
   return (
     <div className='blogList-wrap'>
       {blogs.map((blog) => (

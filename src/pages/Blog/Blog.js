@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { blogList } from '../../config/data';
-import Chip from '../../components/common/Chip';
-import EmptyList from '../../components/common/EmptyList';
+import Chip from '../../components/common/Chip/Chip';
+import EmptyList from '../../components/common/EmptyList/EmptyList';
 import './styles.css';
 import { Link } from 'react-router-dom';
 
-const Blog = () => {
+function Blog() {
   const { id } = useParams();
   const [blog, setBlog] = useState(null);
 
@@ -16,7 +16,7 @@ const Blog = () => {
       setBlog(blog);
     }
   }, [id]);
-
+  
   return (
     <>
       <Link className='blog-goBack' to='/'>

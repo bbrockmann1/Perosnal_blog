@@ -1,10 +1,10 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import Blog from './pages/Blog';
-import Home from './pages/Home';
+import Blog from './pages/Blog/Blog';
+import Home from './pages/Home/Home';
 
-const App = () => {
+function App() {
   return (
     <div className='container'>
       <Routes>

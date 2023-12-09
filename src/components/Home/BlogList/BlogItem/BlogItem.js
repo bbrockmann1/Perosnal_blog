@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Chip from '../../../common/Chip';
+import Chip from '../../../common/Chip/Chip';
 import './styles.css';
 
-const BlogItem = ({
+function BlogItem({ 
   blog: {
     description,
     title,
@@ -13,8 +13,8 @@ const BlogItem = ({
     cover,
     category,
     id,
-  },
-}) => {
+  }
+ }) {
   return (
     <div className='blogItem-wrap'>
       <img className='blogItem-cover' src={cover} alt='cover' />
