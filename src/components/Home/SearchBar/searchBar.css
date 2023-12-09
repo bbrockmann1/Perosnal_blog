@@ -29,8 +29,17 @@
   border: none;
   padding: 0.3rem 1rem;
   border-radius: 5px;
-  /* color for search bar color */
-  background-color: #0f52ba;
   /* color for text of search button */
   color: #fff;
+}
+
+.go-button {
+  /* color for go button */
+  background-color: #007bff;
+  cursor: pointer;
+}
+
+.go-button:hover {
+  /* hover shade color */
+  background-color: #0b4f99;
 }

@@ -35,7 +35,9 @@
   justify-content: center;
   align-items: center;
   padding: 10px;
+  /* color for  about button*/
   background-color: #007bff;
+  /* text color for about button */
   color: #fff;
   text-decoration: none;
   border: none;
@@ -47,6 +49,7 @@
 
 .about-button:hover {
   transform: scale(1.1);
+  /* hover shade color */
   background-color: #0b4f99;
 }
 
@@ -54,8 +57,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  padding: 1px;
+  /* color for toggle button */
   background-color: #007bff;
+  /* toggle button text color */
   color: #fff;
   text-decoration: none;
   border: none;
