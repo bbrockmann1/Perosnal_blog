@@ -1,6 +1,6 @@
 import React from 'react';
 import BlogItem from './BlogItem/BlogItem';
-import './styles.css';
+import './blogList.css';
 
 function BlogList({ blogs }) {
   return (

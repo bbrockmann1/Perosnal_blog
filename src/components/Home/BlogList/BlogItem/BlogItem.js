@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Chip from '../../../common/Chip/Chip';
-import './styles.css';
+import './blogItem.css';
 
 function BlogItem({ 
   blog: {

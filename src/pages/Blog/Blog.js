@@ -3,7 +3,7 @@ import { useParams } from 'react-router';
 import { blogList } from '../../config/data';
 import Chip from '../../components/common/Chip/Chip';
 import EmptyList from '../../components/common/EmptyList/EmptyList';
-import './styles.css';
+import './blog.css';
 import { Link } from 'react-router-dom';
 
 function Blog() {

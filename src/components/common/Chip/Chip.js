@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles.css';
+import './chip.css';
 
 function Chip({ label }) {
     return (

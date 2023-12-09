@@ -1,5 +1,6 @@
 .home-header {
   text-align: center;
+  
 }
 
 .home-header h2 {
@@ -21,4 +22,14 @@
   /* color for p tag. */
   color: #a9a9a9;
   font-weight: 500;
+}
+
+.border {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid red;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
