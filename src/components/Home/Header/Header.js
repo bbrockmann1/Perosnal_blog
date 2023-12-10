@@ -28,10 +28,10 @@ function Header() {
           <div className="toggle-button" onClick={handleDropdown}> Links
             {open && (
             <div className="dropdown-content">
-              <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.linkedin.com/in/robert-brockmann" target="_blank" rel="noopener noreferrer">
                 LinkedIn
               </a>
-              <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/bbrockmann1" target="_blank" rel="noopener noreferrer">
                 GitHub
               </a>
               <a href='mailto: bbrockmann1@gmail.com'>
