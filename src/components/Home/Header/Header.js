@@ -1,14 +1,28 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import './header.css';
 
 function Header() {
   const [open, setOpen] = useState(false);
+  const dropdownRef = useRef(null);
 
   function handleDropdown() {
     setOpen(!open);
   };
+
+  function handleClickOutside(event) {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setOpen(false);
+    }
+  }
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   return (
       <>
@@ -25,7 +39,7 @@ function Header() {
           <Link to="/about" className="about-button">
             About
           </Link>
-          <div className="toggle-button" onClick={handleDropdown}> Links
+          <div className="toggle-button" onClick={handleDropdown} ref={dropdownRef}> Links
             {open && (
             <div className="dropdown-content">
               <a href="https://www.linkedin.com/in/robert-brockmann" target="_blank" rel="noopener noreferrer">
