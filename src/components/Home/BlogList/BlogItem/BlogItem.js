@@ -21,12 +21,10 @@ function BlogItem({
       <img className='blogItem-cover' src={cover} alt='cover' />
       <Chip label={category} />
       <h3 className='title'>{title}</h3>
-      <p className='blogItem-desc'>{description.substring(0, 100) + '...'}</p>
+      <p className='blogItem-desc'>{description.substring(0, 90) + '...'}</p>
       <footer>
         <div className='blogItem-author'>
-          <img src={authorAvatar} alt='avatar' />
           <div>
-            <h6 className='name'>{authorName}</h6>
             <p>{createdAt}</p>
           </div>
         </div>

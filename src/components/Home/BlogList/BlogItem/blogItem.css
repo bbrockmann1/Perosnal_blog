@@ -33,7 +33,6 @@
 
 .blogItem-desc::before {
   position: absolute;
-  content: '...';
   bottom: 0;
   right: 0;
 }
