@@ -37,6 +37,7 @@
   /* color for go button */
   background-color: #007bff;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .go-button:hover {

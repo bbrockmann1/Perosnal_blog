@@ -29,8 +29,7 @@ function BlogItem({
             <h6 className='name'>{authorName}</h6>
             <p>{createdAt}</p>
           </div>
-        </div>        
-          ➝
+        </div>
       </footer>
     </div>
   </Link>
