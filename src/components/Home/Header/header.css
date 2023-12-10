@@ -69,6 +69,12 @@
   position: relative;
   padding-right: 20px;
   font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-button:hover {
+  /* hover shade color */
+  background-color: #0b4f99;
 }
 
 .toggle-button::after {
