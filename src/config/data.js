@@ -107,7 +107,7 @@ export const blogList = [
         },
         {
             type: 'text',
-            value: "Finally, let's look at how we can dynamically route. Full-stack applications require developers to fetch a resource from an API and route traffic based on an attribute such as a slug or ID. Below, you can see how I use a <Link/> tag to dynamically render a blog based on its"
+            value: "Finally, let's look at how we can dynamically route. Full-stack applications require developers to fetch a resource from an API and route traffic based on an attribute such as a slug or ID. Below, you can see how I use a <Link/> tag to dynamically render a blog based on its ID"
         },
         {
             type: 'image',
