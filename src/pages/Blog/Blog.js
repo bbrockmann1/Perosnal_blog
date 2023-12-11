@@ -11,12 +11,12 @@ function Blog() {
   const [blog, setBlog] = useState(null);
 
   useEffect(() => {
-    let blog = blogList.find((blog) => blog.id === parseInt(id));
-    if (blog) {
-      setBlog(blog);
+    let foundBlog = blogList.find((blog) => blog.id === parseInt(id));
+    if (foundBlog) {
+      setBlog(foundBlog);
     }
   }, [id]);
-  
+
   return (
     <>
       <Link className='blog-goBack' to='/'>
@@ -36,13 +36,21 @@ function Blog() {
             </div>
           </header>
           <img src={blog.cover} alt='cover' />
-          <p className='blog-desc'>{blog.description}</p>
+          {blog.description.map((item, index) => {
+            if (item.type === 'text') {
+              return <p key={index} className='blog-desc'>{item.value}</p>;
+            } else if (item.type === 'image') {
+              <div></div>
+              return <img key={index} src={item.value} alt={`${index}`}/>;
+            }
+            return null;
+          })}
         </div>
       ) : (
         <EmptyList />
       )}
     </>
   );
-};
+}
 
 export default Blog;
