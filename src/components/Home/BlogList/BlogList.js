@@ -3,10 +3,13 @@ import BlogItem from './BlogItem/BlogItem';
 import './blogList.css';
 
 function BlogList({ blogs }) {
+  
+  const sortedBlogs = [...blogs].sort((a, b) => b.id - a.id);
+
   return (
     <div className='blogList-wrap'>
-      {blogs.map((blog) => (
-        <BlogItem blog={blog} />
+      {sortedBlogs.map((blog) => (
+        <BlogItem key={blog.id} blog={blog} />
       ))}
     </div>
   );
