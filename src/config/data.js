@@ -17,7 +17,7 @@ export const blogList = [
       },
       {
         type: "image",
-        value: "/assets/images/iptables-v.bmp"
+        value: "/assets/images/iptables-v.jpg"
       },
       {
         type: "text",
@@ -65,15 +65,15 @@ export const blogList = [
       }
   ]
   },
-//   {
-//     id: 2,
-//     title: 'Hardening your Linux OS',
-//     category: 'Hosting',
-//     subCategory: ['Web Hosting', 'Linux', 'Debian', 'Apache'],
-//     createdAt: 'December 11, 2023',
-//     cover: '/assets/images/apache.png',
-//     description: [
+  {
+    id: 2,
+    title: 'How to Host a Website With Apache',
+    category: 'Hosting',
+    subCategory: ['Web Hosting', 'Linux', 'Debian', 'Apache'],
+    createdAt: 'December 11, 2023',
+    cover: '/assets/images/apache.png',
+    description: [
 
-//     ]
-//   }
+    ]
+  }
 ];
