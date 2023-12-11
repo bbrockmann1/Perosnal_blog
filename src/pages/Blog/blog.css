@@ -38,8 +38,9 @@
 .blog-desc {
   /* color for blog content */
   color: #faf3f3;;
-  padding: 1rem;
-  margin-top: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+    
 }
 
 .blog-title {
