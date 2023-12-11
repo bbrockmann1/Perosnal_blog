@@ -46,10 +46,3 @@
   /* color for blog title */
   color: #faf3f3;
 }
-
-.support{
-  width: 200px; /* Set your desired width */
-  height: auto; /* Maintain aspect ratio */
-  display: block; /* Ensure the image is a block element */
-  margin: 0 auto;
-}
