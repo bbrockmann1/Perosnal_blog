@@ -8,8 +8,6 @@ function BlogItem({
     description,
     title,
     createdAt,
-    authorName,
-    authorAvatar,
     cover,
     category,
     id,
@@ -21,7 +19,7 @@ function BlogItem({
       <img className='blogItem-cover' src={cover} alt='cover' />
       <Chip label={category} />
       <h3 className='title'>{title}</h3>
-      <p className='blogItem-desc'>{description.substring(0, 90) + '...'}</p>
+      <p className='blogItem-desc'>{description.value.substring(0, 90) + '...'}</p>
       <footer>
         <div className='blogItem-author'>
           <div>
