@@ -65,15 +65,58 @@ export const blogList = [
       }
   ]
   },
-//   {
-//     id: 2,
-//     title: 'How to Host a Website With Apache',
-//     category: 'Hosting',
-//     subCategory: ['Web Hosting', 'Linux', 'Debian', 'Apache'],
-//     createdAt: 'December 11, 2023',
-//     cover: '/assets/images/apache.png',
-//     description: [
-
-//     ]
-//   }
+  {
+    id: 2,
+    title: 'How I Use React Router DOM',
+    category: 'Development',
+    subCategory: ['Web dev', 'React', 'Single Page Application', 'Internet'],
+    createdAt: 'December 11, 2023',
+    cover: '/assets/images/react-routing.jpg',
+    description: [
+        {
+            type: 'text',
+            value: "React Router is an invaluable tool for any React application. It seamlessly routes all pages throughout your app while only loading the elements that need to be loaded. In this blog, I'll go over how I used React Router v6 in this project: everything from installation to routing and dynamic endpoints. I will share relevant snippets of code in this blog, but if you want to see the code in its entirety, you can find it on my GitHub."
+        },
+        {
+            type: 'text',
+            value: "To start off, let's install React Router. This is pretty easy with npm or Yarn. Type either 'npm i react-router-dom' or 'yarn add react-router-dom'. Now that React Router is installed, let's add it to our project. First, go to your index.js file and import BrowserRouter. This component gives all the functionality of routing to your app. Just wrap the <BrowserRouter></BrowserRouter> component around your <App/> component, and your app now has the ability to render specific components based on the URL."
+        },
+        {
+            type: 'image',
+            value: '/assets/images/browser-router.png'
+        },
+        {
+            type: 'text',
+            value: "Now that our app has routing capabilities, let's add a couple of routes to our project. To define a route, you need to wrap all of your routes in the <Routes/> component. Then you can define a <Route/> by adding a path and element as props. Don't forget to import these at the top of your file. A lot of the time, these are imported automatically as you use them in your IDE."
+        },
+        {
+            type: 'image',
+            value: '/assets/images/routes.png'
+        },
+        {
+            type: 'text',
+            value: "Here we see that a route is defined with a path and the component we want to route to. Next, let's talk about how we get to these endpoints. You can easily type these endpoints into your browser, but when we use websites, we expect links and buttons to help us navigate. So now we can set up a <Link/> component to help the user route through the website, similar to an onClick event."
+        },
+        {
+            type: 'image',
+            value: '/assets/images/link.png'
+        },
+        {
+            type: 'text',
+            value: "Here we see how we can use our <Link/> tag to route traffic as if it were an onClick event. This is the code for the 'Go Back' button that you see in the top left of your screen. By wrapping the 'Go Back' span in the link tag, it gives the user the ability to click the button and route back to a destination of your choosing by using the 'to=' prop. It's also important to note that you must import the Link component at the top of your page if you want to use it."
+        },
+        {
+            type: 'text',
+            value: "Finally, let's look at how we can dynamically route. Full-stack applications require developers to fetch a resource from an API and route traffic based on an attribute such as a slug or ID. Below, you can see how I use a <Link/> tag to dynamically render a blog based on its"
+        },
+        {
+            type: 'image',
+            value: '/assets/images/route-id.png'
+        },
+        {
+            type: 'text',
+            value: "Here is the code for a blog item that you see on the homepage of this website. As you see, I'm passing in a blog object that also includes the ID. I wrap the entire blog item in the <Link/> tag so that anywhere you click on that card will lead you to that blog. The important bit is on line 10. Using the ID from the blog object we import into this component, we can interpolate the endpoint so it's dynamic. If the blog's ID is 1, then the endpoint will be /blog/1. All you have to do is take the info from an object and interpolate it into the 'to=' endpoint."
+        },
+    ]
+}
 ];
