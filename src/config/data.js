@@ -118,5 +118,59 @@ export const blogList = [
             value: "Here is the code for a blog item that you see on the homepage of this website. As you see, I'm passing in a blog object that also includes the ID. I wrap the entire blog item in the <Link/> tag so that anywhere you click on that card will lead you to that blog. The important bit is on line 10. Using the ID from the blog object we import into this component, we can interpolate the endpoint so it's dynamic. If the blog's ID is 1, then the endpoint will be /blog/1. All you have to do is take the info from an object and interpolate it into the 'to=' endpoint."
         },
     ]
+},
+{
+  id: 3,
+  title: 'Integrating Fail2ban Into Your Network',
+  category: 'Security',
+  subCategory: ['Linux', 'OS', 'Debian', 'Ubuntu'],
+  createdAt: 'December 12, 2023',
+  cover: '/assets/images/fail2ban-cover.png',
+  description: [
+    {
+      type: 'text',
+      value: "Fail2ban is a great way to harden your Linux OS against attackers that probe the open internet for insecure systems. Fail2ban is an intrusion software framework that works alongside iptables, designed to prevent brute-force attacks from malicious IPs attempting to SSH into your OS. After setting up my iptables firewall rules, I came across Fail2ban and integrated it into my OS. This post serves as a short guide for installing and configuring Fail2ban."
+    },
+    {
+      type: 'text',
+      value: "First things first, start by upgrading packages before installing Fail2ban. Run the command 'sudo apt update', and then install Fail2ban by running the command 'sudo apt install fail2ban'. If you would like to verify that Fail2ban was installed correctly, you can run 'sudo systemctl status fail2ban.service'."
+    },
+    {
+      type: 'image',
+      value: '/assets/images/fail2ban-service.png'
+    },
+    {
+      type: 'text',
+      value: "With this command, we can see that Fail2ban was installed, but the service is not running as there are no configurations for it yet. Fail2ban has different options for configuration. Like iptables, Fail2ban's configuration is not persistent by default. You can find all configuration settings in the jail.conf file, but configuring Fail2ban in this file will not save changes over reboots. Fail2ban recommends copying and creating a file called jail.local to make configurations persistent across reboots. You can do this by running this command 'sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local'. With your new jail.local file, 'sudo nano -l /etc/fail2ban/jail.local' (the -l tag gives us lines in our editor that will make finding configurations easier)."
+    },
+    {
+      type: 'image',
+      value: "/assets/images/fail2ban-bantime-inc.png"
+    },
+    {
+      type: 'text',
+      value: "At line 47, we find the bantime increment section. This configuration setting allows for a ban time that follows a formula that adds more ban time for each failed attempt from a previously banned IP."
+    },
+    {
+      type: 'image',
+      value: '/assets/images/fail2ban-ignore-ip.png'
+    },
+    {
+      type: 'text',
+      value: "The next section to look for is the ignore IP config at line 89. This section ignores certain IPs from being banned if there are too many attempts. If you are using a VPS through a service like Linode, you should add the public IP address you plan on connecting to that machine. Note, the address that is listed there by default is the loopback address to prevent banning local servers or the system itself."
+    },
+    {
+      type: 'text',
+      value: "And that's it. These are basic configurations that will get your Fail2ban service up and running. This is a large config file that has lots of different options so don't be afraid to dig around for settings that are a better fit for your network. Now running the 'sudo systemctl status fail2ban.service' should give you an active message showing your service is now running."
+    },
+    {
+      type: 'image',
+      value: '/assets/images/fail2ban-active.png'
+    },
+    {
+      type: 'text',
+      value: "There was one problem for me, however. After following the basic configurations above, my service would not start. The problem had to do with the types of logs that my Linux distro was using. Many guides I saw expect your logs to be in the /var/log/auth.log directory; however, my distro uses journalctl for its logging. By going to line 281 and adding the correct directory, I was able to start my service. This might be something worth looking into if your Fail2ban service doesn't start on the first go."
+    }
+  ]
 }
 ];

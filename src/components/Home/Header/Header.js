@@ -32,7 +32,7 @@ function Header() {
             <span>Tech and Web Dev</span>
           </h1>
           <p>
-            A place for my interests in tech. <br /> Web development, security, Raspberry Pi, IT, and programming.
+            A place for my interests in tech. <br /> Web development, security, IT, and programming.
           </p>
         </header>
         <div className='links-container'>
