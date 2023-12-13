@@ -172,5 +172,16 @@ export const blogList = [
       value: "There was one problem for me, however. After following the basic configurations above, my service would not start. The problem had to do with the types of logs that my Linux distro was using. Many guides I saw expect your logs to be in the /var/log/auth.log directory; however, my distro uses journalctl for its logging. By going to line 281 and adding the correct directory, I was able to start my service. This might be something worth looking into if your Fail2ban service doesn't start on the first go."
     }
   ]
+},
+{
+  id: 4,
+  title: 'How to Clone Your Linux OS',
+  category: 'IT',
+  subCategory: ['Linux', 'OS', 'Debian', 'ISO'],
+  createdAt: 'December 12, 2023',
+  cover: '/assets/images/hard-drive.jpg',
+  description: [
+
+  ]
 }
 ];
