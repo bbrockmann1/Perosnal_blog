@@ -175,13 +175,49 @@ export const blogList = [
 },
 {
   id: 4,
-  title: 'How to Clone Your Linux OS',
+  title: 'How to Clone Your Linux OS Using dd',
   category: 'IT',
   subCategory: ['Linux', 'OS', 'Debian', 'ISO'],
-  createdAt: 'December 12, 2023',
+  createdAt: 'December 13, 2023',
   cover: '/assets/images/hard-drive.jpg',
   description: [
-
+    {
+      type: 'text',
+      value: "Whenever I add new software or make a major change to my OS, it's always important to take a backup of that disk in case of disk failure. These setups can sometimes be a headache and something you'd rather only do once. In the case of disk failure or other unforeseen circumstances, you can take a previous clone of a disk and write that data to a brand new disk, booting your operating system off that disk for virtually zero downtime. Linux comes built-in with the dd utility. 'dd' stands for data definition (or disk destroyer if you're not careful). It is a very powerful tool that can clone disks, create disk images, benchmark, or wipe data. This post will serve as a small guide going over the syntax and command for how to clone and write a disk image for later using 'dd' in Linux."
+    },
+    {
+      type: 'text',
+      value: "To start, it is important to take note of the origin and destination of your disk that you want to clone, and the place where you want to write that data. A simple 'lsblk' will show you where you can find these disks."
+    },
+    {
+      type: 'image',
+      value: '/assets/images/dd-disk-location.png'
+    },
+    {
+      type: 'text',
+      value: "Here is the output after running an 'lsblk' command. We can see the 'sda1' (my USB) mounted at '/media/*****/3B456F874B7E9CCB' and my 16GB SD card that I want to clone at '/dev/mmcblk2'. Take note of these; you will need them for running the clone command. It's also very important to know the exact origins and destinations of your drives. With one wrong command, it would be very easy to wipe the wrong drive or lose data you don't want to lose. I would recommend being extra sure of what you are copying and what you are writing to."
+    },
+    {
+      type: 'image',
+      value: '/assets/images/dd-command.png'
+    },
+    {
+      type: 'text',
+      value: "This is the command that will clone the disk and write it to the destination. Let's break this command down and understand it before we execute. 'if=/dev/mmcblk2' specifies the 'input file' for the disk that we want to copy, and the '/dev/mmcblk2' is the location of the disk we noted earlier. 'of=/media/*****/3B456F874B7E9CCB/web-client_12.12.23.img' here 'of' stands for 'output file' and will be the destination where the data is written. I put the mounted point for my USB drive that I want to clone the disk to. Following the mount point, we have the name of the file you want to write. This, of course, can be whatever you want. I tried to be as descriptive as possible about what it was and appended it with the date."
+    },
+    {
+      type: 'text',
+      value: "Finally, we have the 'bs' and 'status' options. The 'bs=4m' specifies the block size to be used during the copying process. I don't typically mess with this option, as increasing the block size could result in faster speeds; however, it also has the potential to cause errors during the copying process. Lastly, there is the 'status' option. Setting the status to 'progress' will show the bytes copied and the progress during cloning. With all the options and syntax out of the way, press enter and see what happens."
+    },
+    {
+      type: 'image',
+      value: '/assets/images/dd-finished.png'
+    },
+    {
+      type: 'text',
+      value: "Successful cloning! We see that the 'records in' match the 'records out,' and all data was successfully copied to the drive. The syntax of this command seems pretty straightforward, but it is extremely important to get it right. Like I said before, it would be very easy to potentially lose data by writing the wrong command. So, understanding each part of the command is important. I'm sure I will even find myself coming back to this post to get the correct syntax because I often find myself backing up my operating systems in the case of disk failure."
+    }
   ]
 }
+
 ];
