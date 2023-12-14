@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 function Blog() {
   const { id } = useParams();
   const [blog, setBlog] = useState(null);
+  const [expandedImage, setExpandedImage] = useState(null);
 
   useEffect(() => {
     let foundBlog = blogList.find((blog) => blog.id === parseInt(id));
@@ -16,6 +17,14 @@ function Blog() {
       setBlog(foundBlog);
     }
   }, [id]);
+
+  const handleImageClick = (imageUrl) => {
+    setExpandedImage(imageUrl);
+  };
+
+  const handleCloseModal = () => {
+    setExpandedImage(null);
+  };
 
   return (
     <>
@@ -40,11 +49,26 @@ function Blog() {
             if (item.type === 'text') {
               return <p key={index} className='blog-desc'>{item.value}</p>;
             } else if (item.type === 'image') {
-              <div></div>
-              return <img key={index} src={item.value} alt={`${index}`}/>;
+              return (
+                <img
+                  key={index}
+                  src={item.value}
+                  alt={`${index}`}
+                  onClick={() => handleImageClick(item.value)}
+                  style={{cursor: 'pointer'}}
+                />
+              );
             }
             return null;
           })}
+          {/* Modal for Expanded Image */}
+          {expandedImage && (
+        <div className='modal' onClick={handleCloseModal}> 
+          <div className='modal-content' onClick={(e) => e.stopPropagation()}> 
+            <img src={expandedImage} alt='expanded' className='expanded-image' />
+          </div>
+        </div>
+      )}
         </div>
       ) : (
         <EmptyList />
