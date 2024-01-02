@@ -11,7 +11,7 @@ function Home() {
 
   useEffect(() => {
     fetch('http://localhost:4000/blogs') // Replace with your server URL
-      .then((response) => response.json())
+      .then((res) => res.json())
       .then((data) => {
         setOriginalBlogs(data);
         setBlogs(data);

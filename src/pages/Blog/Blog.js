@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
-import { blogList } from '../../config/data';
 import Chip from '../../components/common/Chip/Chip';
 import EmptyList from '../../components/common/EmptyList/EmptyList';
 import './blog.css';
@@ -12,11 +11,16 @@ function Blog() {
   const [expandedImage, setExpandedImage] = useState(null);
 
   useEffect(() => {
-    let foundBlog = blogList.find((blog) => blog.id === parseInt(id));
-    if (foundBlog) {
-      setBlog(foundBlog);
-    }
+    fetch(`http://localhost:4000/blogs/${id}`) // Replace with your server URL
+      .then((res) => res.json())
+      .then((data) => {
+        console.log('Fetched Blog Data:', data);
+        setBlog(data[0]);
+      })
+      .catch((error) => console.error('Error fetching blog:', error));
   }, [id]);
+
+  console.log('blog state:', blog)
 
   const handleImageClick = (imageUrl) => {
     setExpandedImage(imageUrl);
@@ -34,10 +38,10 @@ function Blog() {
       {blog ? (
         <div className='blog-wrap'>
           <header>
-            <p className='blog-date'>Published {blog.createdAt}</p>
+            <p className='blog-date'>Published {blog.created_at}</p>
             <h1 className='blog-title'>{blog.title}</h1>
             <div className='blog-subCategory'>
-              {blog.subCategory.map((category, i) => (
+            {blog.subcategory && blog.subcategory.map((category, i) => (
                 <div key={i}>
                   <Chip label={category} />
                 </div>
@@ -45,7 +49,7 @@ function Blog() {
             </div>
           </header>
           <img src={blog.cover} alt='cover' />
-          {blog.description.map((item, index) => {
+          {blog.description && blog.description.map((item, index) => {
             if (item.type === 'text') {
               return <p key={index} className='blog-desc'>{item.value}</p>;
             } else if (item.type === 'image') {
