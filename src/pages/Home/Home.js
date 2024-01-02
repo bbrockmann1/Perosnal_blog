@@ -1,33 +1,39 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import EmptyList from '../../components/common/EmptyList/EmptyList';
 import BlogList from '../../components/Home/BlogList/BlogList';
 import Header from '../../components/Home/Header/Header';
 import SearchBar from '../../components/Home/SearchBar/SearchBar';
-import { blogList } from '../../config/data';
 
 function Home() {
-  const [blogs, setBlogs] = useState(blogList);
+  const [originalBlogs, setOriginalBlogs] = useState([]);
+  const [blogs, setBlogs] = useState([]);
   const [searchKey, setSearchKey] = useState('');
 
-  // Search submit
+  useEffect(() => {
+    fetch('http://localhost:4000/blogs') // Replace with your server URL
+      .then((response) => response.json())
+      .then((data) => {
+        setOriginalBlogs(data);
+        setBlogs(data);
+      })
+      .catch((error) => console.error('Error fetching blogs:', error));
+  }, []);
+
   const handleSearchBar = (e) => {
     e.preventDefault();
     handleSearchResults();
   };
 
-  // Search for blog by category
   const handleSearchResults = () => {
-    const allBlogs = blogList;
-    const filteredBlogs = allBlogs.filter((blog) =>
+    const filteredBlogs = originalBlogs.filter((blog) =>
       blog.category.toLowerCase().includes(searchKey.toLowerCase().trim())
     );
     setBlogs(filteredBlogs);
   };
 
-  // Clear search and show all blogs
   const handleClearSearch = () => {
-    setBlogs(blogList);
     setSearchKey('');
+    setBlogs(originalBlogs);
   };
   
   return (
@@ -42,6 +48,6 @@ function Home() {
       {!blogs.length ? <EmptyList /> : <BlogList blogs={blogs} />}
     </div>
   );
-};
+}
 
 export default Home;
