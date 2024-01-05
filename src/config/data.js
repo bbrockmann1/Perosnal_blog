@@ -1,10 +1,10 @@
 export const blogList = [
-  {
+{
     id: 1,
     title: 'Improving Security with Iptables in Linux',
     category: 'Security',
-    subCategory: ['Linux', 'OS', 'Debian', 'Ubuntu'],
-    createdAt: 'December 10, 2023',
+    subcategory: ['Linux', 'OS', 'Debian', 'Ubuntu'],
+    created_at: 'December 10, 2023',
     cover: '/assets/images/iptables-filter.jpeg',
     description: [
       {
@@ -64,13 +64,13 @@ export const blogList = [
         value: "With some basic rules in place, it is important to know that these rules are saved in memory. Meaning when the system reboots, your firewall rules will be gone. You could save the rules to a config file and restore them each time your system reboots, or you could install iptables-persistent to take care of that each time your system reboots. Run the command 'sudo apt install iptables-persistent'."
       }
   ]
-  },
-  {
+},
+{
     id: 2,
     title: 'How I Use React Router DOM',
     category: 'Development',
-    subCategory: ['Web dev', 'React', 'Single Page Application', 'Internet'],
-    createdAt: 'December 11, 2023',
+    subcategory: ['Web dev', 'React', 'Single Page Application', 'Internet'],
+    created_at: 'December 11, 2023',
     cover: '/assets/images/react-routing.jpg',
     description: [
         {
@@ -177,8 +177,8 @@ export const blogList = [
   id: 4,
   title: 'How to Clone Your Linux OS Using dd',
   category: 'IT',
-  subCategory: ['Linux', 'OS', 'Debian', 'ISO'],
-  createdAt: 'December 13, 2023',
+  subcategory: ['Linux', 'OS', 'Debian', 'ISO'],
+  created_at: 'December 13, 2023',
   cover: '/assets/images/hard-drive.jpg',
   description: [
     {
@@ -219,5 +219,4 @@ export const blogList = [
     }
   ]
 }
-
 ];

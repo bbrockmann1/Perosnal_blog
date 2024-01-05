@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Chip from '../../../common/Chip/Chip';
 import './blogItem.css';
 
-function BlogItem({ blog: { id, title, category, createdAt, cover, description } }) {
+function BlogItem({ blog: { id, title, category, created_at, cover, description } }) {
   const firstText = description.find(desc => desc.type === 'text');
 
   return (
@@ -16,7 +16,7 @@ function BlogItem({ blog: { id, title, category, createdAt, cover, description }
         <footer>
           <div className='blogItem-author'>
             <div>
-              <p>{createdAt}</p>
+              <p>{created_at}</p>
             </div>
           </div>
         </footer>
