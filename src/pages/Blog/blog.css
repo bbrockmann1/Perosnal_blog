@@ -2,6 +2,11 @@
   max-width: 700px;
   margin: 0 auto;
 }
+.loader-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .blog-goBack {
   text-decoration: none;

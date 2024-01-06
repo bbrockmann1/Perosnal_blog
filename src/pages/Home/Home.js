@@ -59,7 +59,7 @@ function Home() {
       {isLoading ? (
         <div className='loader-container'>
           <FadeLoader
-            color="#FFFFFF"
+            color="#D8DBDE"
             loading={isLoading}
             height={15}
             width={5} 
