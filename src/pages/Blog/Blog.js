@@ -14,10 +14,9 @@ function Blog() {
 
   useEffect(() => {
     const fetchBlog = () => {
-      fetch(`http://localhost:4000/blogs/${id}`) // Replace with your server URL
+      fetch(`/blogs/${id}`) // Replace with your server URL
         .then((res) => res.json())
         .then((data) => {
-          console.log('Fetched Blog Data:', data);
           setBlog(data[0]);
           setIsLoading(false);
         })
