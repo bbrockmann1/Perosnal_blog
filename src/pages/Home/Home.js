@@ -10,7 +10,7 @@ function Home() {
   const [originalBlogs, setOriginalBlogs] = useState([]);
   const [blogs, setBlogs] = useState([]);
   const [searchKey, setSearchKey] = useState('');
-  const [isLoading, setIsLoading] = useState(true); // Loading state
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     fetchBlogs();
@@ -22,11 +22,11 @@ function Home() {
       .then((data) => {
         setOriginalBlogs(data);
         setBlogs(data);
-        setIsLoading(false); // Update loading state once data is fetched
+        setIsLoading(false);
       })
       .catch((error) => {
         console.error('Error fetching blogs:', error);
-        setIsLoading(false); // Handle error by updating loading state
+        setIsLoading(false);
       });
   };
 
