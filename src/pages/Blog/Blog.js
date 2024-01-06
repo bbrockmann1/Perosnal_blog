@@ -43,7 +43,7 @@ function Blog() {
       {isLoading ? (
         <div className='loader-container'>
           <FadeLoader 
-            color="#D8DBDE"
+            color="rgb(192, 192, 192)"
             loading={isLoading}
             height={15}
             width={5} 
