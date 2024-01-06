@@ -4,7 +4,7 @@ export const blogList = [
     title: 'Improving Security with Iptables in Linux',
     category: 'Security',
     subcategory: ['Linux', 'OS', 'Debian', 'Ubuntu'],
-    created_at: 'December 10, 2023',
+    created_at: 'December 10th, 2023',
     cover: '/assets/images/iptables-filter.jpeg',
     description: [
       {
@@ -70,7 +70,7 @@ export const blogList = [
     title: 'How I Use React Router DOM',
     category: 'Development',
     subcategory: ['Web dev', 'React', 'Single Page Application', 'Internet'],
-    created_at: 'December 11, 2023',
+    created_at: 'December 11th, 2023',
     cover: '/assets/images/react-routing.jpg',
     description: [
         {
@@ -123,8 +123,8 @@ export const blogList = [
   id: 3,
   title: 'Integrating Fail2ban Into Your Network',
   category: 'Security',
-  subCategory: ['Linux', 'OS', 'Debian', 'Ubuntu'],
-  createdAt: 'December 12, 2023',
+  subcategory: ['Linux', 'OS', 'Debian', 'Ubuntu'],
+  created_at: 'December 12th, 2023',
   cover: '/assets/images/fail2ban-cover.png',
   description: [
     {
@@ -178,7 +178,7 @@ export const blogList = [
   title: 'How to Clone Your Linux OS Using dd',
   category: 'IT',
   subcategory: ['Linux', 'OS', 'Debian', 'ISO'],
-  created_at: 'December 13, 2023',
+  created_at: 'December 13th, 2023',
   cover: '/assets/images/hard-drive.jpg',
   description: [
     {
