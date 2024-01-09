@@ -36,6 +36,7 @@
     align-self: flex-end;
     font-size: 90px;
     color: #0080ff;
+    font-weight: 500;
   }
   
   .text-container {
@@ -86,4 +87,10 @@
       margin-right: 5rem;
     }
   }
+
+  .contents{
+    font-weight: 600;
+    font-size: 1.2em;
+  }
+
   

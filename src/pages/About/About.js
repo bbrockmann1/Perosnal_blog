@@ -16,7 +16,7 @@ function About() {
             </div>
         </div>
         <div className='text-container'>
-            <p>
+            <p className='contents'>
             Hello! Welcome to my full-stack self-hosted blog website. My name is Robert Brockmann, and I'm a full-stack web developer living in Colorado. This space serves as a platform for me to discuss my interests in technology. You'll find blog topics covering a wide range, from web development and security to Raspberry Pi projects. Through these blogs, I aim to showcase my tech skills while assisting others in troubleshooting problems I've encountered in the past.
             <br/>
             <br/>

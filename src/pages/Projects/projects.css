@@ -1,0 +1,47 @@
+.header{
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    color: #0080ff;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.project1 {
+    display: flex;
+    width: 100%;
+    text-decoration: none;
+}
+
+.image-container {
+    width: 300px;
+}
+
+.image {
+    width: 100%;
+    height: auto;
+}
+
+.text-container {
+    padding: 20px;
+}
+
+.text-container h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.text-container p {
+    font-size: 1rem;
+    color: #666;
+}
+
+.a{
+    
+    color: inherit;
+}
+
+.hi{
+    font-size: 1rem;
+}
