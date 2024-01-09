@@ -17,7 +17,7 @@ function Home() {
   }, []);
 
   const fetchBlogs = () => {
-    fetch('https://blogapi.xyz:4000/blogs') // Replace with your server URL
+    fetch('https://localhost:4000/blogs') // Replace with your server URL
       .then((res) => res.json())
       .then((data) => {
         setOriginalBlogs(data);
