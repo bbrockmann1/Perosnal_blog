@@ -39,6 +39,9 @@ function Header() {
           <Link to="/about" className="about-button">
             About
           </Link>
+          <Link to='/projects' className='projects-button'>
+            Other Projects
+          </Link>
           <div className="toggle-button" onClick={handleDropdown} ref={dropdownRef}> Links
             {open && (
             <div className="dropdown-content">

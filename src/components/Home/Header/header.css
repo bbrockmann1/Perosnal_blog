@@ -114,3 +114,20 @@
   /* background hover color */
   background-color: #c5c4c4;
 }
+
+.projects-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  /* color for  about button*/
+  background-color: #007bff;
+  /* text color for about button */
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-right: 10px;
+}
