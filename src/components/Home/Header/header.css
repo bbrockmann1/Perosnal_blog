@@ -132,3 +132,9 @@
   transition: background-color 0.3s ease;
   margin-right: 10px;
 }
+
+.projects-button:hover {
+  transform: scale(1.1);
+  /* hover shade color */
+  background-color: #0b4f99;
+}
