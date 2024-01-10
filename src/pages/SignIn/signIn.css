@@ -3,6 +3,8 @@
     flex-direction: column;
     align-items: center;
     margin-top: 3rem;
+    margin-left: -1rem;
+    
 }
 
 .sign-in{
@@ -16,12 +18,14 @@
    margin-bottom: .5rem;
    color: #666;
    font-weight: 500;
+   margin-right: 6.2rem;
 }
 
 .password_field{
     color: #666;
     font-weight: 500;
     margin-bottom: 1rem;
+    margin-right: 6rem;
 }
 
 .fields{
@@ -42,7 +46,6 @@
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin-right: 10px;
 }
 
 .sign-in-button:hover {
