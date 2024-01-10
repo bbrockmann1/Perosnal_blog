@@ -1,10 +1,14 @@
 import './signIn.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate  } from 'react-router-dom';
 import { useState } from 'react';
+import { useSetRecoilState  } from 'recoil';
+import { loggedInState } from '../../atoms';
 
 function SignIn() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const setLoggedIn = useSetRecoilState(loggedInState);
+    const navigate = useNavigate();
 
     const handleUsernameChange = (e) => {
         setUsername(e.target.value);
@@ -15,10 +19,14 @@ function SignIn() {
     };
 
     const handleSubmit = (e) => {
-        e.preventDefault();
-        
-        setUsername('');
-        setPassword('');
+      e.preventDefault();
+
+      setLoggedIn(true);
+
+      setUsername('');
+      setPassword('');
+
+      navigate('/create');
     }
 
 

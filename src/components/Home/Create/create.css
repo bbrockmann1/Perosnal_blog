@@ -1,0 +1,12 @@
+.logged-in-container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 5rem;
+}
+
+.logged-in{
+    font-weight: 700;
+    font-size: 50px;
+    color: #0080ff;
+}

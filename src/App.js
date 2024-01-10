@@ -6,7 +6,7 @@ import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import Projects from './pages/Projects/Projects';
 import SignIn from './pages/SignIn/SignIn';
-import Create from './pages/Create/Create';
+import Auth from './pages/Auth/Auth';
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
           <Route path='/about' element={ <About /> }/>
           <Route path='/projects' element={ <Projects /> }/>
           <Route path='/sign-in' element={ < SignIn/> } />
-          <Route path='/create' element={ <Create /> } />
+          <Route path='/create' element={ <Auth /> } />
         </Routes>
       </RecoilRoot>
     </div>

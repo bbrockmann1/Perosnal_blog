@@ -1,9 +1,10 @@
-import './create.css'
+import './auth.css'
 import { Link } from 'react-router-dom';
 import { useRecoilValue } from 'recoil';
 import { loggedInState } from '../../atoms';
+import Create from '../../components/Home/Create/Create';
 
-function Create() {    
+function Auth() {    
     const isLoggedIn = useRecoilValue(loggedInState);
 
     return(
@@ -20,15 +21,17 @@ function Create() {
             A place for my interests in tech. <br /> Web development, security, IT, and programming.
           </p>
         </header>
-        <div>
+        
         {isLoggedIn ? (
-        <p>Welcome! You are logged in.</p>
+              <Create />
             ) : (
-                <p>Please log in to access this content.</p>
+              <div className='auth-container'>
+                <p className='logged-out'>Please log in to create a blog.</p>
+              </div>
             )}
-        </div>
+        
         </>
     );
 };
 
-export default Create;
+export default Auth;
