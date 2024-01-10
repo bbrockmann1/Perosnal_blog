@@ -21,11 +21,11 @@ function SignIn() {
     const handleSubmit = (e) => {
       e.preventDefault();
 
+      //logic for sign in route to API here
       setLoggedIn(true);
 
       setUsername('');
       setPassword('');
-
       navigate('/create');
     }
 

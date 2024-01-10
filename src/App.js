@@ -1,5 +1,6 @@
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 import { RecoilRoot } from 'recoil';
+import { useEffect } from 'react';
 import './App.css';
 import Blog from './pages/Blog/Blog';
 import Home from './pages/Home/Home';
@@ -9,6 +10,24 @@ import SignIn from './pages/SignIn/SignIn';
 import Auth from './pages/Auth/Auth';
 
 function App() {
+  const navigate = useNavigate();
+
+  //keypress to navigate to sign-in
+  useEffect(() => {
+    const handleKeyPress = (event) => {
+      if (event.ctrlKey && event.key === 'q') {
+        navigate('/sign-in')
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyPress);
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyPress);
+    };
+
+  }, [navigate]);
+
   return (
     <div className='container'>
       <RecoilRoot>
