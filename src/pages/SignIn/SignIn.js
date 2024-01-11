@@ -20,14 +20,39 @@ function SignIn() {
 
     const handleSubmit = (e) => {
       e.preventDefault();
-
-      //logic for sign in route to API here
-      setLoggedIn(true);
-
-      setUsername('');
-      setPassword('');
-      navigate('/create');
-    }
+    
+      // Get username and password from state or form fields
+      const data = {
+        username,
+        password,
+      };
+    
+      // Make a POST request to the sign-in API
+      fetch('https://localhost:4000/sign-in', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      })
+        .then((res) => {
+          if (res.status === 200) {
+            // Successful sign-in
+            setLoggedIn(true);
+            navigate('/create');
+          } else {
+            // Unsuccessful sign-in
+            console.error('Sign-in failed');
+            throw new Error('Sign-in failed');
+          }
+        })
+        .finally(() => {
+          // Reset form fields or perform any cleanup
+          setUsername('');
+          setPassword('');
+        });
+    };
+    
 
 
     return(
