@@ -15,7 +15,7 @@ function App() {
   //keypress to navigate to sign-in
   useEffect(() => {
     const handleKeyPress = (event) => {
-      if (event.ctrlKey && event.key === 'q') {
+      if (event.altKey && event.key === 'q') {
         navigate('/sign-in')
       }
     };
