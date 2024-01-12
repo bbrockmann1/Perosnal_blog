@@ -57,6 +57,9 @@ function Header() {
             </div>
           )}
         </div>
+          <Link to='/sign-in' className="sign-in-button2">
+              Sign In
+          </Link>
         </div>
       </>
   );

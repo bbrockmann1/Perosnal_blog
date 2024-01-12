@@ -138,3 +138,27 @@
   /* hover shade color */
   background-color: #0b4f99;
 }
+
+.sign-in-button2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  /* color for  about button*/
+  background-color: #007bff;
+  /* text color for about button */
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-right: 10px;
+  margin-left: auto;
+}
+
+.sign-in-button2:hover {
+  transform: scale(1.1);
+  /* hover shade color */
+  background-color: #0b4f99;
+}

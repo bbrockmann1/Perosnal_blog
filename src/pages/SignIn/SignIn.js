@@ -7,6 +7,8 @@ import { loggedInState } from '../../atoms';
 function SignIn() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [showError, setShowError] = useState(false); 
+    const [errorMessage, setErrorMessage] = useState('');
     const setLoggedIn = useSetRecoilState(loggedInState);
     const navigate = useNavigate();
 
@@ -15,41 +17,49 @@ function SignIn() {
     };
 
     const handlePasswordChange = (e) => {
-        setPassword(e.target.value);
+        setPassword(e.target.value);  
+    };
+
+    const closeErrorPopup = () => {
+      setShowError(false);
     };
 
     const handleSubmit = (e) => {
       e.preventDefault();
     
-      // Get username and password from state or form fields
       const data = {
         username,
         password,
       };
     
       // Make a POST request to the sign-in API
-      fetch('https://localhost:4000/sign-in', {
+      fetch('/sign-in', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+            'Content-Type': 'application/json',
         },
         body: JSON.stringify(data),
-      })
+    })
         .then((res) => {
-          if (res.status === 200) {
-            // Successful sign-in
-            setLoggedIn(true);
-            navigate('/create');
-          } else {
-            // Unsuccessful sign-in
-            console.error('Sign-in failed');
-            throw new Error('Sign-in failed');
-          }
+            if (res.status === 200) {
+                setLoggedIn(true);
+                navigate('/create');
+            } else {
+                return res.json();
+            }
+        })
+        .then((errorData) => {
+            if (errorData && errorData.error) {
+                setErrorMessage(errorData.error || 'An error occurred. Please try again later.');
+                setShowError(true);
+            } else {
+                setErrorMessage('An unexpected error occurred. Please try again later.');
+                setShowError(true);
+            }
         })
         .finally(() => {
-          // Reset form fields or perform any cleanup
-          setUsername('');
-          setPassword('');
+            setUsername('');
+            setPassword('');
         });
     };
     
@@ -96,7 +106,13 @@ function SignIn() {
           <button type="submit" className='sign-in-button'>Sign In</button>
         </form>
       </div>
-
+      {showError && (
+        <div className="error-popup">
+          <p>{errorMessage}</p>
+          <p>Please try again.</p>
+          <button className="close-btn" onClick={closeErrorPopup}>&times;</button>
+        </div>
+      )}
       </>
     );
 };
