@@ -7,6 +7,15 @@ function About() {
         <Link className='about-goBack' to='/'>
             <span> &#8592;</span> <span>Go Back</span>
         </Link>
+        <header className='home-header'>
+          <h2>Robert Brockmann</h2>
+          <h1>
+            <span>Tech and Web Dev</span>
+          </h1>
+          <p>
+            A place for my interests in tech. <br /> Web development, security, IT, and programming.
+          </p>
+        </header>
         <div className='about-container'>
             <div className='pic-container'>
                 <img src='/assets/images/me.png' alt='Robert Brockmann' className='img'/>
